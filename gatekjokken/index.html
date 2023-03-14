@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Gatekjokken</title>
+</head>
+<body>
+    
+    <select name="matvalg" id="matvalg">
+        <option value="" selected disabled hidden>Velg en matrett</option>
+        <option value="100">Biff</option>
+        <option value="50">Salat</option>
+        <option value="75">Cabaret</option>
+
+    </select>
+    <h1 id="utskrift"></h1>
+
+    <div id="radioknappomraade">
+
+        <div>
+            <label for="valg1">kul</label>
+            <input type="radio" name="gruppe" class="radioknapper" id="valg1" value="verdi1">
+        </div>
+
+        <div>
+            <label for="valg2">kuk</label>
+            <input type="radio" name="gruppe" class="radioknapper" id="valg2" value="verdi2">
+        </div>
+
+        <div>
+            <label for="valg3">kik</label>
+            <input type="radio" name="gruppe" class="radioknapper" id="valg3" value="verdi3">
+        </div>
+
+        <div>
+            <label for="valg4">cat</label>
+            <input type="radio" name="gruppe" class="radioknapper" id="valg4" value="verdi4">
+        </div>
+    </div>
+
+    <div id="checkbokser">
+
+
+        <input type="checkbox" class="checkbokser" value="1">
+        <input type="checkbox" class="checkbokser" value="2">
+        <input type="checkbox" class="checkbokser" value="3">
+        <input type="checkbox" class="checkbokser" value="4">
+
+        <input type="button" onclick="utskriftCheckbokser(event)">
+        
+    </div>
+
+    <h2 id="utskrift2"></h2>
+
+    <div>
+        <input type="range" id="slider" min="0" max="10" step="0.1">
+    </div>
+    
+
+    <script src="js/script.js"></script>
+</body>
+</html>
