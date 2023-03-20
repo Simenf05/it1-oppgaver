@@ -45,18 +45,17 @@ let figur3 = {
 
 let figur4 = {
     form: "kvadrat",
-    lengde: 3,
+    lengde: 6,
     bredde: 6,
-
 };
 
 let figur5 = {
     form: "kvadrat",
-    lengde: 6,
+    lengde: 3,
     bredde: 6
 };
 
-
+//a
 function checkObj(obj1, obj2) {
 
     if (!(Object.keys(obj1).length === Object.keys(obj2).length)) return false
@@ -75,24 +74,24 @@ function checkObj(obj1, obj2) {
     }
 
     for (const obj1Key in obj1) {
-        const element = obj1[obj1Key]
-
-        let exists = false
-
-        for (const obj2Key in obj2) {
-            const element2 = obj2[obj2Key]
-
-            if (!(element === element2)) return false
-
-            exists = true
-
-        }
-
+        if (!(obj1[obj1Key] === obj2[obj1Key])) return false
     }
 
     return true
-
 }
 
 
-console.log(checkObj(figur5, figur4))
+
+
+//b
+function likeDeler(obj1, obj2) {
+    let newObj = {}
+
+    for (const obj1Key in obj1) {
+        if (obj1[obj1Key] === obj2[obj1Key]) {newObj = {...newObj, [obj1Key]: obj1[obj1Key]}}
+    }
+
+    return newObj
+}
+
+console.log(likeDeler(figur5, figur4))
