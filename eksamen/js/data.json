@@ -1,0 +1,66 @@
+{
+  "Gjendesheim": {
+    "Gjendesheim": null,
+    "Glitterheim": 22,
+    "Memurubu": 14,
+    "Gjendesbu": null,
+    "Leirvassbu": null,
+    "Spliterstulen": null,
+    "Olavsbu": null
+  },
+  "Glitterheim": {
+    "Gjendesheim": 22,
+    "Glitterheim": null,
+    "Memurubu": 18,
+    "Gjendesbu": null,
+    "Leirvassbu": null,
+    "Spliterstulen": 17,
+    "Olavsbu": null
+
+  },
+  "Memurubu": {
+    "Gjendesheim": 14,
+    "Glitterheim": 18,
+    "Memurubu": null,
+    "Gjendesbu": 10,
+    "Leirvassbu": null,
+    "Spliterstulen": null,
+    "Olavsbu": null
+  },
+  "Gjendesbu": {
+    "Gjendesheim": null,
+    "Glitterheim": null,
+    "Memurubu": 10,
+    "Gjendesbu": null,
+    "Leirvassbu": 19,
+    "Spliterstulen": 24,
+    "Olavsbu": 16
+  },
+  "Leirvassbu": {
+    "Gjendesheim": null,
+    "Glitterheim": null,
+    "Memurubu": null,
+    "Gjendesbu": 19,
+    "Leirvassbu": null,
+    "Spliterstulen": 15,
+    "Olavsbu": 11
+  },
+  "Spliterstulen": {
+    "Gjendesheim": null,
+    "Glitterheim": 18,
+    "Memurubu": null,
+    "Gjendesbu": 24,
+    "Leirvassbu": 15,
+    "Spliterstulen": null,
+    "Olavsbu": null
+  },
+  "Olavsbu": {
+    "Gjendesheim": null,
+    "Glitterheim": null,
+    "Memurubu": null,
+    "Gjendesbu": 16,
+    "Leirvassbu": 11,
+    "Spliterstulen": null,
+    "Olavsbu": null
+  }
+}
