@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+    import {
+        getFirestore,
+        addDoc,
+        collection,
+        setDoc,
+        doc,
+        updateDoc,
+        deleteField,
+        deleteDoc,
+        getDoc,
+        getDocs,
+        query,
+        where,
+        orderBy,
+    } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyAPkd4-uTyD0w57CcVOUcDTpsP_vrm78OM",
+        authDomain: "fir-forste.firebaseapp.com",
+        projectId: "fir-forste",
+        storageBucket: "fir-forste.appspot.com",
+        messagingSenderId: "932112805737",
+        appId: "1:932112805737:web:e5fd2d31ab498d449f57f8",
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore();
+
+
+
+    await setDoc(doc(db, "elever", "thore"), {
+        fornavn: "Rebecca",
+        etternavn: "Thomasen",
+        telefon: "12345678",
+    });
+    await setDoc(doc(db, "elever", "nilja"), {
+        fornavn: "Jakob",
+        etternavn: "Nilsen",
+        epost: "jakob@nilsen.net",
+    });
+    await setDoc(doc(db, "elever", "moisa"), {
+        fornavn: "Isa",
+        etternavn: "Mo",
+        epost: "isamo@mo.no",
+        telefon: "23456789",
+    });
+    await setDoc(doc(db, "elever", "marga"), {
+        fornavn: "Gabrielle",
+        etternavn: "Martin",
+        telefon: "45678901",
+    });
+
+    const docSnap = await getDoc(doc(db, "elever", "marga"));
+    console.log(
+        "ID:",
+        docSnap.id,
+        "Navn:",
+        docSnap.data().fornavn,
+        docSnap.data().etternavn
+    );
+
+    const snapshot = await getDocs(collection(db, "elever"));
+    snapshot.forEach((doc) => {
+        console.log(doc.data().fornavn, doc.data().etternavn);
+    });
+
+    query(collection(db, "elever"), orderBy("etternavn"));
+
+    query(collection(db, "elever"), where("epost", "!=", "undefined"));
+
+    const querySnapshot = await getDocs(
+        query(collection(db, "elever"), where("epost", "!=", "undefined"))
+    );
+
+    querySnapshot.forEach((docSnap) => {
+        console.log(
+            docSnap.data().fornavn,
+            docSnap.data().etternavn,
+            docSnap.data().epost
+        );
+    });
+
+</script>
+</body>
+</html>

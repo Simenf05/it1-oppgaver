@@ -1,7 +1,10 @@
 const rootEl = document.getElementById("root")
-const ferdigEl = document.getElementById("ferdig")
+const ferdigButtonEl = document.getElementById("ferdigButton")
+const ferdigTekstEL = document.getElementById("ferdigTekst")
+ferdigButtonEl.onclick = ferdigClick
 
-const hytteCount = 7
+
+const hytteCount = 3
 const hytteList = []
 const divList = []
 
@@ -17,9 +20,6 @@ function defOpt() {
     defaultOpt.innerText = "Velg en hytte"
     return defaultOpt
 }
-
-
-
 
 function generateSelect(data, valgNum) {
 
@@ -52,6 +52,7 @@ function generateSelect(data, valgNum) {
     newDiv.appendChild(newSelect)
     rootEl.appendChild(newDiv)
 }
+
 function setUp(data) {
 
     const newDiv = document.createElement("div")
@@ -84,9 +85,6 @@ function setUp(data) {
 function selectChange(e) {
     const index = hytteList.indexOf(e.target)
 
-
-
-
     if (!(index + 1 === hytteList.length)) {
         for (const divIndex in divList) {
             if (divIndex <= index) continue
@@ -95,16 +93,23 @@ function selectChange(e) {
             element.remove()
         }
 
-        hytteList.splice(index)
-        divList.splice(index)
+        hytteList.splice(index + 1)
+        divList.splice(index + 1)
+
     }
 
-    console.log(divList)
-    console.log(hytteList)
+    const newIndex = hytteList.indexOf(e.target)
 
     if (hytteList.length === hytteCount) return
-    generateSelect(data[e.target.value], index + 2)
+    generateSelect(data[e.target.value], newIndex + 2)
 }
 
+function ferdigClick() {
+
+    if (!(hytteList.length === hytteCount)) return
+
+    ferdigTekstEL.innerText = hytteList.toString()
+
+}
 
 setUp(data)
