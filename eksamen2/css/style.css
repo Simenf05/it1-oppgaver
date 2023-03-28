@@ -1,4 +1,74 @@
 
+/* generics */
+
+div {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+img {
+    width: 100%;
+}
+
+p, a {
+    font-family: "Times New Roman", serif;
+    font-size: large;
+}
+
+h3 {
+    margin: 10px;
+}
+
+
+/* classes */
+
+
+.slim {
+    width: 40%;
+}
+
+.medium {
+    width: 70%;
+}
+
+.textbox {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.flexDown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flexRight {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.noMargin {
+    margin: 0;
+}
+
+.topMargin {
+    margin-top: 30vh;
+}
+
+
+
+.swapBtn {
+
+}
+
+
+
+
+/* id's */
 
 
 #root {
@@ -7,5 +77,12 @@
     flex-direction: column;
 
 }
+
+
+
+@media screen {
+    
+}
+
 
 
