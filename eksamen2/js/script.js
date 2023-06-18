@@ -8,11 +8,13 @@ const swappingBox = document.getElementById("swappingBox")
 const swapBtnArr = document.getElementsByClassName("swapBtn")
 let shownBox = 0
 
-
+// assign the json data
 const steder = data.steder
 const bilder = data.bilder
 
+
 function setSwappingBox(num) {
+    // sets the content of the box that can swap its content
 
     swappingBox.innerHTML = ""
 
@@ -34,6 +36,7 @@ function setSwappingBox(num) {
 
 
 function updateSwappingBox(e) {
+    // function used to update the box that swaps 
 
     shownBox += Number(e.target.value)
 
@@ -47,14 +50,17 @@ function updateSwappingBox(e) {
 
 
 
-
 function nextBilde(pos) {
+    // generates a new img tag with the right src
+
     const imgEl = document.createElement("img")
     imgEl.src = `./img/${bilder[pos]}`
     return imgEl
 }
 
+
 function swapBilde(increment) {
+    //changes the increments img pos and appends new img
 
     bildePos += Number(increment)
 
@@ -70,9 +76,12 @@ function swapBilde(increment) {
 
 
 const buttonOnclick = (e) => swapBilde(e.target.value)
+// onclick for html
+
 
 
 function setUp() {
+    // sets up the website
 
     for (const swapBtn of swapBtnArr) {
         swapBtn.onclick = updateSwappingBox
